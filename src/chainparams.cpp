@@ -97,7 +97,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeoutHeight = 2427264; // 364 days later
 
         consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000100010001");
-        consensus.defaultAssumeValid = uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e"); // 1
+        consensus.defaultAssumeValid = uint256S("0x0000087f42b1890d3819a61dbb5a0bd1fc47ed43eb700c11a31b2c0ff296543d"); // 1
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -113,9 +113,9 @@ public:
         m_assumed_blockchain_size = 40;
         m_assumed_chain_state_size = 2;
 
-        genesis = CreateGenesisBlock(1717967230, 9348, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1717967230, 2083692379, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000087f42b1890d3819a61dbb5a0bd1fc47ed43eb700c11a31b2c0ff296543d"));
         assert(genesis.hashMerkleRoot == uint256S("0x78e27c9d3157cd3b0572da1acf83347e13b5e10b0019cef3347ea77149378c4f"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
@@ -148,7 +148,7 @@ public:
 
         checkpointData = {
             {
-                {  1, uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e")},
+                {  1, uint256S("0x0000087f42b1890d3819a61dbb5a0bd1fc47ed43eb700c11a31b2c0ff296543d")},
             }
         };
 
@@ -215,7 +215,7 @@ public:
         genesis = CreateGenesisBlock(1717967230, 9348, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
         assert(consensus.hashGenesisBlock == uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e"));
-        assert(genesis.hashMerkleRoot == uint256S("0x78e27c9d3157cd3b0572da1acf83347e13b5e10b0019cef3347ea77149378c4f"));
+        assert(genesis.hashMerkleRoot == uint256S("0x41d51f992a1a864041fab61473878c463689faf2de01c25a3ef86fe497501c4d"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
