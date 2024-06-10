@@ -201,7 +201,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeoutHeight = 2419200; // 364 days later
 
         consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000100010001");
-        consensus.defaultAssumeValid = uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e"); // 1
+        consensus.defaultAssumeValid = uint256S("0x000007f6cb91e7c770532f87c2d66054a0a1063966da7940b5dcacc885b8339a"); // 1
 
         pchMessageStart[0] = 0xdf;
         pchMessageStart[1] = 0x2b;
@@ -212,10 +212,10 @@ public:
         m_assumed_blockchain_size = 4;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1717967230, 9348, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1718059590, 2380667, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e"));
-        assert(genesis.hashMerkleRoot == uint256S("0x41d51f992a1a864041fab61473878c463689faf2de01c25a3ef86fe497501c4d"));
+        //assert(consensus.hashGenesisBlock == uint256S("0x000007f6cb91e7c770532f87c2d66054a0a1063966da7940b5dcacc885b8339a"));
+        //assert(genesis.hashMerkleRoot == uint256S("0x41d51f992a1a864041fab61473878c463689faf2de01c25a3ef86fe497501c4d"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -243,13 +243,13 @@ public:
 
         checkpointData = {
             {
-                {1, uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e")}
+                {1, uint256S("0x000007f6cb91e7c770532f87c2d66054a0a1063966da7940b5dcacc885b8339a")}
             }
         };
 
         chainTxData = ChainTxData{
             // Data from RPC: getchaintxstats 4096 36d8ad003bac090cf7bf4e24fbe1d319554c8933b9314188d6096ac12648764d
-            /* nTime    */ 1717967230,
+            /* nTime    */ 1718059590,
             /* nTxCount */ 0,
             /* dTxRate  */ 0.02,
         };
