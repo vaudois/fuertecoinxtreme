@@ -53,7 +53,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
     const char* pszTimestamp = "EU Times 03/June/2024 CoinXpool, This Visionary, Fuerte Coin Xtreme";
-    const CScript genesisOutputScript = CScript() << ParseHex("040a631269e24db1b1e51d91f596ebb92ffe9e0df75d446c0cc06daf9d1e35931f405e71e2fc3a92c859510f6a26a766fadf7952781d1e8af2545aca280f591f8e") << OP_CHECKSIG;
+    const CScript genesisOutputScript = CScript() << ParseHex("0429ea8d37ec6e093089b62af5420f3c7aa7a54111cc6ef826540a6524ad2fcaafa9fbef6ad2cc66dc7e4453a8588b707899c95c79b90214692dc4b9a958d39464") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -97,7 +97,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeoutHeight = 2427264; // 364 days later
 
         consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000100010001");
-        consensus.defaultAssumeValid = uint256S("0x62e2e3d21343a00994d38a63524867507dbeee6850e8fbf02e9c47a3ccf82f24"); // 2186382
+        consensus.defaultAssumeValid = uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e"); // 1
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -113,10 +113,10 @@ public:
         m_assumed_blockchain_size = 40;
         m_assumed_chain_state_size = 2;
 
-        genesis = CreateGenesisBlock(1717967230, 2165424, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1717967230, 9348, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000051fb81f89dc0b97ca4d40ae483e56b581ab21e231d14f1f9d1e110e2b8"));
-        assert(genesis.hashMerkleRoot == uint256S("0xcef74baa40b830b7d261b91213f202c9ab59f2c75bd4cff2afdb18de2ddbda05"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e"));
+        assert(genesis.hashMerkleRoot == uint256S("0x78e27c9d3157cd3b0572da1acf83347e13b5e10b0019cef3347ea77149378c4f"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
@@ -148,15 +148,15 @@ public:
 
         checkpointData = {
             {
-                {  1500, uint256S("0x841a2965955dd288cfa707a755d05a54e45f8bd476835ec9af4402a2b59a2967")},
+                {  1, uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e")},
             }
         };
 
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 4096 62e2e3d21343a00994d38a63524867507dbeee6850e8fbf02e9c47a3ccf82f24
-            /* nTime    */ 1641142661,
-            /* nTxCount */ 100225898,
-            /* dTxRate  */ 1.17733189266096
+            /* nTime    */ 1717967230,
+            /* nTxCount */ 0,
+            /* dTxRate  */ 
         };
     }
 };
@@ -201,7 +201,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_MWEB].nTimeoutHeight = 2419200; // 364 days later
 
         consensus.nMinimumChainWork = uint256S("0000000000000000000000000000000000000000000000000000000100010001");
-        consensus.defaultAssumeValid = uint256S("0x4a280c0e150e3b74ebe19618e6394548c8a39d5549fd9941b9c431c73822fbd5"); // 1737876
+        consensus.defaultAssumeValid = uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e"); // 1
 
         pchMessageStart[0] = 0xdf;
         pchMessageStart[1] = 0x2b;
@@ -212,10 +212,10 @@ public:
         m_assumed_blockchain_size = 4;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1486949366, 293345, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1717967230, 9348, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"));
-        assert(genesis.hashMerkleRoot == uint256S("0x97ddfbbae6be97fd6cdf3e7ca13232a3afff2353e29badfab7f73011edd4ced9"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e"));
+        assert(genesis.hashMerkleRoot == uint256S("0x78e27c9d3157cd3b0572da1acf83347e13b5e10b0019cef3347ea77149378c4f"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -243,15 +243,15 @@ public:
 
         checkpointData = {
             {
-                {300, uint256S("54e6075affe658d6574e04c9245a7920ad94dc5af8f5b37fd9a094e317769740")}
+                {1, uint256S("0x000006a4d5f0cb79fbdc893e09e5bc458efb7bd370336092e177c518a0dfc37e")}
             }
         };
 
         chainTxData = ChainTxData{
             // Data from RPC: getchaintxstats 4096 36d8ad003bac090cf7bf4e24fbe1d319554c8933b9314188d6096ac12648764d
-            /* nTime    */ 1607986972,
-            /* nTxCount */ 4229067,
-            /* dTxRate  */ 0.06527021772939347,
+            /* nTime    */ 1717967230,
+            /* nTxCount */ 0,
+            /* dTxRate  */ 0.02,
         };
     }
 };
